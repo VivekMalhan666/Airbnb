@@ -13,6 +13,7 @@ import { DateRangePicker } from 'react-date-range';
 
 function Header() {
   const [searchInput, setSearchInput] = useState('');
+  const [noOfGuests, setNoOfGuests] = useState(1);
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
 
@@ -27,6 +28,11 @@ function Header() {
   const handleSelect = (ranges) => {
     setStartDate(ranges.selection.startDate);
     setEndDate(ranges.selection.endDate);
+  };
+
+  // To reset Input
+  const resetInput = () => {
+    setSearchInput('');
   };
 
   return (
@@ -72,6 +78,25 @@ function Header() {
             rangeColors={['#FD5B61']}
             onChange={handleSelect}
           />
+          <div className="flex items-center border-b mb-4">
+            <h2 className="text-2xl flex-grow font-semibold ">
+              Number of Guests
+            </h2>
+            <UsersIcon className="h-5" />
+            <input
+              type="number"
+              value={noOfGuests}
+              onChange={(event) => setNoOfGuests(event.target.value)}
+              min={1}
+              className="w-12 pl-2 text-lg outline-none text-red-400"
+            />
+          </div>
+          <div className="flex">
+            <button onClick={resetInput} className="flex-grow text-gray-500">
+              Cancel
+            </button>
+            <button className="flex-grow text-red-400">Search</button>
+          </div>
         </div>
       )}
     </header>
