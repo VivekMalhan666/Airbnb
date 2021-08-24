@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Footer from '../components/Footer';
 import Header from '../components/Header';
 import HeroImage from '../components/HeroImage';
 import LargeCard from '../components/LargeCard';
@@ -46,6 +47,9 @@ export default function Home({ exploreData, cardData }) {
           buttonText="Get Inspired"
         />
       </main>
+      <footer>
+        <Footer />
+      </footer>
     </div>
   );
 }
