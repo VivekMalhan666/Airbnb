@@ -10,6 +10,8 @@ This project is hosted live at https://airbnb-vivekmalhan666.vercel.app/ .
 
 In the project directory, you can run:
 
+    npm run dev
+
 ### The following Technologies were used to develop this application
 
     1. React js.
